@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel or Consonant Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Vowel or Consonant Checker</h2>
+        <input type="text" id="letterInput" maxlength="1" placeholder="Enter a letter">
+        <button onclick="checkLetter()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkLetter() {
+            const letter = document.getElementById("letterInput").value.toLowerCase();
+            const result = document.getElementById("result");
+
+            if(letter.length === 0) {
+                result.textContent = "Please enter a letter!";
+            }
+            else if(!letter.match(/[a-z]/i)) {
+                result.textContent = "Please enter a valid alphabet!";
+            }
+            else if(letter === 'a' ||  'e' || 'i' ||  'o' ||  'u') {
+                result.textContent = `"${letter}" is a Vowel.`;
+            } 
+            else {
+                result.textContent = `"${letter}" is a Consonant.`;
+            }
+        }
+    </script>
+</body>
+</html>

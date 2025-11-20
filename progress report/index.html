@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Progress Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Student Progress Dashboard</h1>
+
+  <div class="summary">
+    <div class="card" id="total">Total Students: 0</div>
+    <div class="card" id="male">Male: 0</div>
+    <div class="card" id="female">Female: 0</div>
+  </div>
+
+  <div class="table-container">
+    <h2>Student Details</h2>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Progress (%)</th></tr>
+      </thead>
+      <tbody id="student-table">
+        <!-- Filled by JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h2>Progress Chart</h2>
+    <canvas id="progressChart"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-Table</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Registration form</h1>
+
+    <h2>Registration From</h2>
+
+    <img src="meta1.jpg" alt="meta partners" width="200px" />
+
+    <form>
+      <p>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName" />
+      </p>
+
+      <p>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" id="lastName" />
+      </p>
+
+      <p>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" />
+      </p>
+
+      <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" />
+      </p>
+
+      <p>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" max="100" min="10" />
+      </p>
+
+      <p>
+        <label for="birthdate">DOB:</label>
+        <input type="date" name="birthdate" id="birthdate" />
+      </p>
+
+      <!-- Select Dropdown -->
+      <p>
+        <label for="course">Course:</label>
+        <select name="course" id="course">
+          <option value="">Select Course</option>
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="js">Javascript</option>
+        </select>
+      </p>
+
+      <!-- Radio Buttons -->
+      <p>
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="m" />
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" value="f" />
+        <label for="gender">Female</label>
+      </p>
+
+      <!-- checkbox -->
+      <p>
+        <label for="skills">Skills:</label>
+        <input type="checkbox" name="skills" id="html" value="html" />
+        <label for="skills">HTML</label>
+        <input type="checkbox" name="skills" id="css" value="css" />
+        <label for="skills">CSS</label>
+        <input type="checkbox" name="skills" id="js" value="js" />
+        <label for="skills">Javascript</label>
+      </p>
+
+      <p>
+        <label for="message">why do you want to join?</label><br />
+        <textarea name="message" id="message"></textarea>
+      </p>
+
+      <p>
+        <label for="resume">Upload Resume:</label>
+        <input type="file" name="resume" id="resume" />
+      </p>
+
+      <p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </p>
+    </form>
+
+    <hr />
+
+    <h2>Student List</h2>
+    <table>
+      <caption>
+        Registered Students
+      </caption>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ansh</td>
+          <td>ansh123@gmail.com</td>
+          <td>HTML</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Gaurav</td>
+          <td>gaurav111@gmail.com</td>
+          <td>CSS</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>Dhruv <sup>2</sup></td>
+          <td>dhruv231@gmail.com</td>
+          <td>JS</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="4">Total Students: 3</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h2>course Details</h2>
+
+    <table>
+      <tr>
+        <th>Course</th>
+        <th>Duration</th>
+        <th>Price</th>
+      </tr>
+
+      <tr>
+        <td rowspan="2">HTML , CSS</td>
+        <td>2 weeks</td>
+        <td>$100</td>
+      </tr>
+
+      <tr>
+        <td>3 weeks</td>
+        <td>$100</td>
+      </tr>
+
+      <tr>
+        <td>JS</td>
+        <td>4 weeks</td>
+        <td>$100</td>
+      </tr>
+    </table>
+  </body>
+</html>

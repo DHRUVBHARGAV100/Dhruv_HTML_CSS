@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Smith - Web Developer Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* NAVIGATION */
+      nav {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 1rem 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-menu a:hover {
+        color: #ffd700;
+      }
+
+      /* HERO SECTION */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=1200&h=800&fit=crop")
+            center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s ease-out 0.3s both;
+      }
+
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+        animation: fadeInUp 1s ease-out 0.6s both;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #333;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        margin: 1rem auto;
+      }
+
+      /* ABOUT SECTION */
+      .about {
+        background-color: #f8f9fa;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .about-image {
+        text-align: center;
+      }
+
+      .about-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* SKILLS SECTION */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .skill-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .skill-card h3 {
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .progress-bar {
+        background-color: #e9ecef;
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 1rem;
+      }
+
+      .progress {
+        height: 100%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 5px;
+        transition: width 2s ease-in-out;
+      }
+
+      /* PORTFOLIO SECTION */
+      .portfolio {
+        background-color: #f8f9fa;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .portfolio-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .portfolio-image {
+        height: 200px;
+        background: linear-gradient(45deg, #ff9a9e, #fecfef);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+      }
+
+      .portfolio-content {
+        padding: 1.5rem;
+      }
+
+      .portfolio-content h3 {
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      /* CONTACT SECTION */
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-info h3 {
+        color: #333;
+        margin-bottom: 2rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .contact-item i {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        color: #667eea;
+      }
+
+      .contact-form {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #667eea;
+        outline: none;
+      }
+
+      /* FOOTER */
+      footer {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .social-links {
+        margin-bottom: 1rem;
+      }
+
+      .social-links a {
+        color: white;
+        font-size: 1.5rem;
+        margin: 0 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #ffd700;
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* RESPONSIVE DESIGN */
+      @media (max-width: 768px) {
+        .nav-container {
+          padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+        }
+
+        .about-content,
+        .contact-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .about-image img {
+          width: 250px;
+          height: 250px;
+        }
+
+        section {
+          padding: 3rem 1rem;
+        }
+
+        .nav-menu {
+          gap: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .skill-card,
+        .portfolio-card {
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">John Smith</div>
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm John Smith</h1>
+        <p>Web Developer & Designer</p>
+        <a href="#portfolio" class="btn">View My Work</a>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a passionate web developer with 3+ years of experience
+              creating beautiful and functional websites. I love turning ideas
+              into reality through clean, efficient code.
+            </p>
+            <p>
+              My expertise includes modern web technologies like HTML5, CSS3,
+              JavaScript, and various frameworks. I'm always eager to learn new
+              technologies and take on challenging projects.
+            </p>
+            <p>
+              When I'm not coding, you can find me exploring new design trends,
+              contributing to open-source projects, or enjoying a good cup of
+              coffee.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+              alt="John Smith"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML & CSS</h3>
+            <p>
+              Expert in semantic HTML and modern CSS including Flexbox, Grid,
+              and animations.
+            </p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>
+              Proficient in vanilla JavaScript and modern ES6+ features for
+              dynamic web applications.
+            </p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>
+              Creating mobile-first, responsive websites that work perfectly on
+              all devices.
+            </p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>
+              Designing user-friendly interfaces with attention to usability and
+              visual appeal.
+            </p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2 class="section-title">My Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="portfolio-image">🛍️</div>
+            <div class="portfolio-content">
+              <h3>E-Commerce Website</h3>
+              <p>
+                A fully responsive online store built with HTML, CSS, and
+                JavaScript featuring shopping cart functionality.
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image">📱</div>
+            <div class="portfolio-content">
+              <h3>Mobile App Landing</h3>
+              <p>
+                Modern landing page for a mobile app with smooth animations and
+                call-to-action sections.
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image">🏢</div>
+            <div class="portfolio-content">
+              <h3>Business Website</h3>
+              <p>
+                Professional corporate website with contact forms, service
+                pages, and testimonial sections.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Let's work together!</h3>
+            <div class="contact-item">
+              <span>📧</span>
+              <span>john.smith@email.com</span>
+            </div>
+            <div class="contact-item">
+              <span>📱</span>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div class="contact-item">
+              <span>📍</span>
+              <span>New York, NY</span>
+            </div>
+            <div class="contact-item">
+              <span>💼</span>
+              <span>Available for freelance work</span>
+            </div>
+          </div>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="social-links">
+        <a href="#">📧</a>
+        <a href="#">💼</a>
+        <a href="#">🐦</a>
+        <a href="#">📸</a>
+      </div>
+      <p>&copy; 2024 John Smith. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Background Image Switcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="gallery">
+    <img src="https://picsum.photos/id/1015/400/300" alt="Image 1" onclick="setBackground(this.src)">
+    <img src="https://picsum.photos/id/1025/400/300" alt="Image 2" onclick="setBackground(this.src)">
+    <img src="https://picsum.photos/id/1035/400/300" alt="Image 3" onclick="setBackground(this.src)">
+  </div>
+
+  <button onclick="resetBackground()" class="reset-btn">Reset Background</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

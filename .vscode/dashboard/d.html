@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Logo</div>
+    <div class="navbar-title">Employee</div>
+    <div class="navbar-actions">
+      <button class="new-btn">New</button>
+      <input type="text" placeholder="Input" />
+      <button class="save-btn">Save</button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <div class="sidebar-item">Home</div>
+      <div class="sidebar-item">Employee</div>
+    </div>
+
+    <div class="content">
+      <h2>Employee Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name ⬆</th>
+            <th>Role ⬆</th>
+            <th>Salary ⬆</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aditya</td>
+            <td>Intern</td>
+            <td>2000</td>
+            <td><button class="delete-btn">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="role-list">
+        <p>Role Options:</p>
+        <ul>
+          <li>Intern</li>
+          <li>Developer</li>
+          <li>Senior</li>
+          <li>TL</li>
+        </ul>
+      </div>
+
+      <hr/>
+
+      <div class="file-section">
+        <h2>File</h2>
+        <div class="file-options">
+          <button>Insert</button>
+          <button>Remove</button>
+        </div>
+        <div class="media-options">
+          <p>Media → Replace, Delete</p>
+        </div>
+        <div class="new-save">
+          <button class="new-btn">New</button>
+          <input type="text" placeholder="Input" />
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

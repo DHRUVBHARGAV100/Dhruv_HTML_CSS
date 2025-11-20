@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings Panel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Public Sans', sans-serif;
+      background: #f0f2f5;
+    }
+
+    
+    #settingsToggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    
+    #settingsPanel {
+      position: fixed;
+      right: -320px;
+      top: 0;
+      width: 300px;
+      height: 100vh;
+      background: white;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      z-index: 999;
+    }
+
+    #settingsPanel.show {
+      right: 0;
+    }
+
+    h4 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: auto;
+    }
+
+    .toggle, .option, .preset, .font-option {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      flex: 1 1 40%;
+      text-align: center;
+    }
+
+    .font-size-bar {
+      margin-top: 10px;
+      background: linear-gradient(to right, red, pink, #ddd);
+      height: 8px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .font-size-indicator {
+      position: absolute;
+      top: -6px;
+      left: 40%;
+      background: black;
+      color: white;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="settingsToggle">⚙️ Settings</button>
+
+<div id="settingsPanel">
+  <h3>Settings</h3>
+
+  
+  <h4>Mode & Contrast</h4>
+  <div class="section">
+    <div class="toggle">🌙 Mode</div>
+    <div class="toggle">🌓 Contrast</div>
+  </div>
+
+  
+  <div class="section" style="margin-top: 10px;">
+    <div class="toggle">🔁 Right to Left</div>
+    <div class="toggle">📏 Compact</div>
+  </div>
+
+
+  <h4>Layout</h4>
+  <div class="section">
+    <div class="option">🔳</div>
+    <div class="option">⬛</div>
+    <div class="option">🟥</div>
+  </div>
+
+  <div class="section">
+    <div class="option">🟥 Integrate</div>
+    <div class="option">⬜ Apparent</div>
+  </div>
+
+
+  <h4>Presets</h4>
+  <div class="section">
+    <div class="preset" style="background: #a3f4c1;"></div>
+    <div class="preset" style="background: #9ecbff;"></div>
+    <div class="preset" style="background: #b89cff;"></div>
+    <div class="preset" style="background: #bed9ff;"></div>
+    <div class="preset" style="background: #ffe59e;"></div>
+    <div class="preset" style="background: #ffbaba;"></div>
+  </div>
+
+  <h4>Font</h4>
+  <div class="section">
+    <div class="font-option">Public Sans</div>
+    <div class="font-option">Inter</div>
+    <div class="font-option">DM Sans</div>
+    <div class="font-option">Nunito Sans</div>
+  </div>
+
+  <h4>Size</h4>
+  <div class="font-size-bar">
+    <div class="font-size-indicator">18px</div>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('settingsToggle');
+  const settingsPanel = document.getElementById('settingsPanel');
+
+  toggleBtn.addEventListener('click', () => {
+    settingsPanel.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>

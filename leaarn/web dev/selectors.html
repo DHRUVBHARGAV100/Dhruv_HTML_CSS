@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS selectors & Properties</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: lightgray;
+      }
+
+      #title {
+        font-size: 2em;
+        color: darkblue;
+        text-align: center;
+        font-weight: bolder;
+      }
+
+      .box {
+        background-color: lightblue;
+        padding: 20px;
+        margin: 12px 0;
+        border: 2px solid blue;
+        border-radius: 8px;
+      }
+
+      .box p {
+        color: darkgreen;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: red;
+        color: white;
+      }
+
+      .quote::before {
+        content: "“";
+        color: red;
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        border: 2px solid green;
+      }
+
+      .font-demo {
+        font-family: Georgia, "Times New Roman", Times, serif, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: oblique;
+      }
+
+      .text-demo {
+        text-align: center;
+        text-decoration: underline;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .border-demo {
+        border-width: 3px;
+        border-style: dashed;
+        border-color: red;
+        border-radius: 12px;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">CSS selectors & Properties</h1>
+
+    <div class="box">
+      <h2>This is a box</h2>
+
+      <p>
+        This paragraph is inside the box and styled with descendent selector
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Font Properties</h2>
+
+      <p class="font-demo">
+        This text shows font-family, font-size, font-weight and font-style
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Text Properties</h2>
+
+      <p class="text-demo">
+        this text is centered, underlined, uppercase, with letter spacing
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Border Properties</h2>
+
+      <p class="border-demo">
+        This box has border-width, border-style, border-color and border-radius
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Background Properties</h2>
+
+      <div class="background-demo">
+        This box demonstrates background-color and color
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Pseudo-class selector</h2>
+      <button class="button">Hover over me!</button>
+      <p>The button change color when you hover over it</p>
+    </div>
+
+    <div class="box">
+      <h2>Pseudo-element selector(::before)</h2>
+      <p class="quote">This line has an arrow added before it using ::before</p>
+    </div>
+
+    <div class="box">
+      <h2>Attribute selector</h2>
+      <p>Text input styled with input[type="text"]</p>
+      <input type="text" placeholder="Green border from attribute selector" />
+    </div>
+
+    <div class="box">
+      <h2>CSS units</h2>
+      <p><strong>Common units:</strong></p>
+      <p>px (pixels) - 16px</p>
+      <p>em (relative to parent)</p>
+      <p>% (Percentage)</p>
+      <p>rem (relative to root)</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.nav-bar{
+    text-align: center;
+    color: rgb(5, 81, 69);
+}
+#addUserForm{
+    margin-left: 45%;
+}
+#userList{
+margin-left: 45%;
+}
+
+table {
+    width: 50%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+button {
+    margin: 5px;
+}

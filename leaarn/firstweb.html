@@ -1,0 +1,66 @@
+<!-- create a website clone of youtube -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #f00;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+    main {
+        padding: 20px;
+    }
+    #video-player {
+        margin-bottom: 20px;
+    }
+    #video-list {
+        margin-top: 20px;
+    }
+    footer {
+        background-color: #f00;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }2
+</style>
+<body>
+    <header>
+        <h1>YouTube Clone</h1>
+    </header>
+    <main>
+        <section id="video-player">
+            <h2>Video Player</h2>
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <section id="video-list">
+            <h2>Related Videos</h2>
+            <ul>
+                <li><a href="#">Related Video 1</a></li>
+                <li><a href="#">Related Video 2</a></li>
+                <li><a href="#">Related Video 3</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 YouTube Clone</p>
+    </footer>
+</body>
+</html>

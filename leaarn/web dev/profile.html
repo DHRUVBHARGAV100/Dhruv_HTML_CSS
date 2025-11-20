@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .main-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-me,
+      .skills,
+      .hobbies {
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        color: rgb(80, 125, 193);
+        border-bottom: 2px solid;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+      }
+
+      .about-me img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .skill-item {
+        background-color: rgb(222, 220, 217);
+        padding: 8px 16px;
+        border-radius: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Shubham</h1>
+        <p>Frontend React Developer</p>
+      </div>
+
+      <div class="main-content">
+        <section class="about-me">
+          <img
+            src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+            alt="Profile image"
+          />
+
+          <h2>About Me</h2>
+
+          <p>
+            Hello I'm Shubham , a passionate web developer . I'm currently
+            working as a Frontend React Developer. I have a strong foundation in
+            HTML, CSS and JavaScript, and I'm constantly learning new
+            technologies to enhance my skills. I'm excited to bring my skills to
+            the team and help build amazing web applications.
+          </p>
+        </section>
+
+        <section class="skills">
+          <h2>My Skills</h2>
+
+          <div class="skills-container">
+            <span class="skill-item">HTML</span>
+            <span class="skill-item">CSS</span>
+            <span class="skill-item">Javascript</span>
+            <span class="skill-item">Problem Solving</span>
+          </div>
+        </section>
+
+        <section class="hobbies">
+          <h2>Hobbies</h2>
+
+          <ul class="hobbies-list">
+            <li>Reading</li>
+            <li>Traveling</li>
+            <li>Playing Games</li>
+            <li>Learning New Technologies</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

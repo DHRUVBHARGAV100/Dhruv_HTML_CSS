@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoldenBird Sign upForm</title>
+  <style>
+    * {
+      box-sizing: content-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      background: linear-gradient(135deg, #530761, #d149b45b);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      background-image: url("weather/img.png");
+    }
+    #slide {
+      width: 1000px;
+      height: 1000px;
+      background: #d0bdf4;
+      border-radius: 50px;
+      box-shadow: 0 20px 30px rgba(49, 39, 95, 0.2);
+      overflow: hidden;
+      position: relative;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url("weather/img.png");
+      background-size: cover;
+      background-position: center;
+      
+    }
+    .top {
+      width: 200%;
+      height: 80%;
+      position: relative;
+      left: 0;
+      display: flex;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .left, .right {
+      width: 50%;
+      height: 100%;
+      padding: 40px;
+    }
+
+    .content {
+      padding-top: 150px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content h2 {
+      color: #2d2d2d;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 20px 25px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #8e7cc3;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin: 10px 5px;
+    }
+    button:hover {
+      background-color: #736796;
+    }
+    .on-off {
+      background-color: #7c66a1;
+    }
+  </style>
+</head>
+<body>
+  <div id="slide">
+    <div class="top" id="form-slider">
+      <div class="left">
+        <div class="content">
+          <h2>Sign Up</h2>
+          <form action="/signup" method="POST">
+            <input type="text" name="FirstName" placeholder="Enter Your FirstName" required />
+            <input type="text" name="LastName" placeholder="Enter Your LastName" required />
+            <input type="text" name="Username" placeholder="Enter Your Username" required />
+            <input type="text" name="Email" placeholder="Enter Your Email-Id" required />
+            <input type="text" name="Phone No" placeholder="Enter Your Mobile No" required />
+            <input type="password" name="password" placeholder="Enter Your Password" required />
+             <input type="password" name="Confirm password" placeholder="Confirm Your Password" required />
+             <button>Submit</button>
+          </form>
+        </div>
+      </div>
+</html>

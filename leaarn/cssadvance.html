@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: clamp(2rem, 5vw, 3rem);  /* CLAMP() - Responsive typography */
+            margin-bottom: 2rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            grid-column: 1 / -1;  /* GRID - Span all columns */
+        }
+        
+        /* ADVANCED CARD WITH MULTIPLE TECHNIQUES */
+        .card {
+            background: rgba(255, 255, 255, 0.1);  /* RGBA - Semi-transparent */
+            backdrop-filter: blur(10px);  /* BACKDROP-FILTER - Glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);  /* CUBIC-BEZIER - Custom easing */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* PSEUDO-ELEMENTS - Decorative elements */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                rgba(255,255,255,0.1), 
+                transparent, 
+                rgba(255,255,255,0.1)
+            );  /* CONIC-GRADIENT - Advanced gradient */
+            animation: rotate 6s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) rotateX(5deg);  /* 3D TRANSFORM */
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.2),
+                0 0 20px rgba(255,255,255,0.1);  /* MULTIPLE SHADOWS */
+        }
+        
+        /* CUSTOM PROPERTIES (CSS Variables) */
+        .card {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --spacing: 1rem;
+        }
+        
+        .card-1 { --primary-color: #ff9ff3; --secondary-color: #54a0ff; }
+        .card-2 { --primary-color: #5f27cd; --secondary-color: #00d2d3; }
+        .card-3 { --primary-color: #feca57; --secondary-color: #ff9ff3; }
+        
+        .card-title {
+            font-size: calc(1.5rem + 0.5vw);  /* CALC() - Dynamic sizing */
+            margin-bottom: var(--spacing);  /* CSS VARIABLES */
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;  /* BACKGROUND-CLIP - Text gradient */
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));  /* FILTER - Drop shadow */
+        }
+        
+        /* ADVANCED FLEXBOX WITH COMPLEX ALIGNMENT */
+        .skill-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+        
+        .skill-name {
+            min-width: 80px;
+            font-weight: bold;
+        }
+        
+        .progress-container {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* CSS ANIMATIONS with KEYFRAMES */
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            animation: fillBar 2s ease-out forwards;
+            transform: translateX(-100%);  /* Start from left */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* SHIMMER EFFECT using PSEUDO-ELEMENTS */
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+        
+        /* ADVANCED IMAGE TECHNIQUES */
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(from 45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1rem;
+            position: relative;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* CLIP-PATH - Custom shapes */
+        .feature-box {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            margin: 1rem 0;
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 0 100%);  /* POLYGON clip */
+            transition: clip-path 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+        }
+        
+        /* ADVANCED GRID with SUBGRID concept */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* ADVANCED ANIMATIONS */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes fillBar {
+            to { transform: translateX(0); }
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* ADVANCED SELECTORS */
+        .card:nth-child(even) {  /* NTH-CHILD - Even cards */
+            animation-delay: 0.2s;
+        }
+        
+        .card:nth-child(odd) {  /* NTH-CHILD - Odd cards */
+            animation-delay: 0.4s;
+        }
+        
+        .card:first-of-type {  /* FIRST-OF-TYPE */
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .card:last-of-type {  /* LAST-OF-TYPE */
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        
+        /* ADVANCED RESPONSIVE with CONTAINER QUERIES simulation */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ASPECT-RATIO property for consistent dimensions */
+        .media-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            aspect-ratio: 16 / 9;  /* ASPECT-RATIO - Maintain proportions */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 1rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* ADVANCED SCROLL BEHAVIOR */
+        html {
+            scroll-behavior: smooth;  /* SMOOTH SCROLLING */
+        }
+        
+        /* FOCUS-VISIBLE for accessibility */
+        .card:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Advanced CSS Showcase</h1>
+        
+        <!-- CARD 1: Skills & Progress -->
+        <div class="card card-1" tabindex="0">
+            <div class="avatar floating">👨‍💻</div>
+            <h2 class="card-title">Skills & Progress</h2>
+            
+            <div class="skill-bar">
+                <span class="skill-name">HTML</span>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 95%;"></div>
+                </div>
+                <span>95%</span>
+            </div>
+            
+            <div class="skill-bar">
+                <span class="skill-name">CSS</span>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <span>90%</span>
+            </div>
+            
+            <div class="skill-bar">
+                <span class="skill-name">JS</span>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                </div>
+                <span>85%</span>
+            </div>
+        </div>
+        
+        <!-- CARD 2: Stats Dashboard -->
+        <div class="card card-2" tabindex="0">
+            <h2 class="card-title">Dashboard Stats</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">127</div>
+                    <div>Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1.2K</div>
+                    <div>Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div>Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5.0</div>
+                    <div>Rating</div>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <strong>🎯 Advanced Features:</strong><br>
+                Hover to see clip-path animation!
+            </div>
+        </div>
+        
+        <!-- CARD 3: Media & Showcase -->
+        <div class="card card-3" tabindex="0">
+            <h2 class="card-title">Media Showcase</h2>
+            
+            <div class="media-box">
+                🎬
+            </div>
+            
+            <p><strong>Aspect Ratio:</strong> 16:9 maintained automatically</p>
+            <p><strong>Backdrop Filter:</strong> Glass-morphism effect</p>
+            <p><strong>Custom Properties:</strong> Dynamic theming</p>
+            
+            <div class="feature-box">
+                <strong>✨ CSS Magic:</strong><br>
+                Conic gradients, 3D transforms, and more!
+            </div>
+        </div>
+    </div>
+</body>
+</html>

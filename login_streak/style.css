@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 0px;
+}
+h1, h2 {
+  color: #333;
+  text-align: center;
+}
+p {
+  font-size: 24px;
+}
+.navbar {
+    background-color: #a2a2a26c;
+    color: rgb(41, 39, 39);
+    padding: 15px;
+    
+}
+.container {
+    background-color: rgb(217, 252, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px); 
+}
+.box {
+    border: 2px solid black;
+    border-style: none;
+    background-color: rgba(27, 223, 223, 0.144);
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

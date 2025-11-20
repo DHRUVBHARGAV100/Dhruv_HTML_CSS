@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: burlywood;
+}
+
+
+.parent{
+    height: 70px;
+    width: 100%;
+    background-color: rgb(70, 62, 62);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.child2 ul{
+ display: flex;
+ justify-content: space-between;
+ gap: 20px;
+}
+
+.child2 ul li{
+    font-weight: 800;
+    font-size: larger;
+    list-style: none;
+}
+
+a{
+    color: azure;
+    text-decoration: none;
+}
+
+.child2 ul li a:hover{
+    color: red;
+}
+
+.child2 ul li a:active{
+    color: red;
+}
+
+button{
+    padding: 3px;
+}

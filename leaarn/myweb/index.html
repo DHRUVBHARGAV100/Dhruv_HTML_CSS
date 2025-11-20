@@ -1,0 +1,665 @@
+<!--cloud kitchen-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cloud kitchen</title>
+</head>
+<style>
+  /*nav bar */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    margin-bottom: 20px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    flex-wrap: wrap;
+    padding-top: 12px;
+
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .search-container {
+    display: flex;
+    width: 50%;
+    position: relative;
+    justify-content: flex-start;
+
+  }
+
+  .search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex: 1;
+  }
+
+  .food-categories {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+
+  .search-button {
+    padding: 4px 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e8e8e8;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-button:hover {
+    background-color: #c6deea;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li {
+    margin: 0 16px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+
+
+    .search-container {
+      width: 100%;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .nav-links li {
+      margin: 12px 0;
+    }
+
+
+  }
+
+
+  /*  hero section */
+  .hero {
+    background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .hero:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+
+  .hero {
+    transition: transform 0.3s ease;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    animation: textAnimation 3s infinite;
+  }
+
+  @keyframes textAnimation {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .order-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .order-button:hover {
+    background-color: #e5533d;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: 300px;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .order-button {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
+
+
+  /*  food grid*/
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .food-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .food-item:hover {
+    transform: scale(1.05);
+  }
+
+  .food-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .food-item p {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    font-style: italic;
+    margin: 10px 0;
+  }
+
+  @media (max-width: 768px) {
+    .food-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .food-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+
+
+  /* food slider  with responsive ness and please add animation like if i hover then it automatically change images  */
+  .food-slider {
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .slider-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+  }
+  .slide {
+    min-width: 200px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+  }
+  .slide img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .slide:hover {
+    transform: scale(1.1);
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @media (max-width: 768px) {
+    .slide {
+      min-width: 150px;
+      margin: 0 5px;
+    }
+  }
+  @media (max-width: 480px) {
+    .slide {
+      min-width: 120px;
+      margin: 0 3px;
+    }
+  }
+
+  
+  
+
+  /*footer   */
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .social-media {
+    margin-bottom: 12px;
+  }
+
+  .social-icon {
+    display: inline-block;
+    margin: 0 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #555;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
+    background-color: #527681;
+  }
+
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      margin: 0 5px;
+    }
+
+    .footer-links a {
+      display: block;
+      margin: 5px 0;
+    }
+  }
+
+  .footer-column {
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    margin: 1%;
+    text-align: left;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 10px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 730px) {
+    .footer-column {
+      width: 46%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .footer-column {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .footer-column {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<body>
+  <!-- nav bar  -->
+  <section>
+    <nav class="navbar">
+      <div class="logo">Cloud Kitchen</div>
+
+      <div class="search-container">
+        <select class="food-categories">
+          <option>All</option>
+          <option>Pizza</option>
+          <option>Burger</option>
+          <option>Pasta</option>
+        </select>
+        <input type="text" class="search-bar" placeholder="Search food...">
+        <button class="search-button">🔍</button>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </section>
+  <!--  hero section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Delicious Food Delivered to Your Doorstep</h1>
+      <button class="order-button" onclick="window.location.href='#'">Order Now</button>
+    </div>
+  </section>
+  <!-- food grid -->
+  <h2 style="text-align: center; font-weight: bold; font-size: 24px; margin-top: 20px;">Top Categories</h2>
+  <section class="food-grid">
+    <div class="food-item">
+      <img
+        src="https://b.zmtcdn.com/data/pictures/chains/0/1400070/ce0341e58cf96f163101b4dff77ed938.jpg?fit=around|960:500&crop=960:500;*,*"
+        alt="Pizza">
+      <p>Pizza - $12</p>
+    </div>
+    <div class="food-item">
+      <img
+        src="https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg"
+        alt="Burger">
+      <p>Burger - $10</p>
+    </div>
+    <div class="food-item">
+      <img src="https://content.jwplatform.com/thumbs/84qpal4P-720.jpg" alt="Pasta">
+      <p>Pasta - $11</p>
+    </div>
+    <div class="food-item">
+      <img
+        src="https://cdn.prod.website-files.com/661f56b3f7ac96857e9ff9e7/66c770bd6e4dff939a7f31a3_AD_4nXcTie2-F71lFBI9IhaXsOwWuoxO8SE75gvTOT5hu1jVTYSP9BM2Umuj-ZykvjvNs2vQTR29vJQNn0b16eqwvc99RLeRhjCiJUo1-XfJKPJjLGEVov5WeiIETCOrTFgr8cVBMDQ98Mq592xePYC31GckKDSo.jpeg"
+        alt="Salad">
+      <p>Salad - $8</p>
+    </div>
+    <div class="food-item">
+      <img
+        src="https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11-500x375.jpg"
+        alt="Dessert">
+      <p>Dessert - $7</p>
+    </div>
+    <div class="food-item">
+      <img
+        src="https://japanesetaste.co.uk/cdn/shop/articles/how-to-make-makizushi-sushi-rolls-japanese-taste.jpg?v=1707914944&width=5760"
+        alt="Sushi">
+      <p>Sushi - $15</p>
+    </div>
+    <div class="food-item">
+      <img src="https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg" alt="Tacos">
+      <p>Tacos - $9</p>
+    </div>
+    <div class="food-item">
+      <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2025/05/clubsandwich.jpg"
+        alt="Sandwich">
+      <p>Sandwich - $8</p>
+    </div>
+    <div class="food-item">
+      <img
+        src="https://www.allrecipes.com/thmb/p4F_knUDCrUNusNOTyjY_dCp8d4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/13338-quick-and-easy-vegetable-soup-DDMFS-4x3-402702f59e7a41519515cecccaba1b80.jpg"
+        alt="Soup">
+      <p>Soup - $6</p>
+    </div>
+    <div class="food-item">
+      <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/samosa-recipe.jpg" alt="Samosa">
+      <p>Samosa - $5</p>
+    </div>
+    <div class="food-item">
+      <img src="https://i.ndtvimg.com/i/2017-11/kachori_650x400_51510318031.jpg" alt="Kachori">
+      <p>Kachori - $5</p>
+    </div>
+    <div class="food-item">
+      <img
+        src="https://twoplaidaprons.com/wp-content/uploads/2020/05/Chinese-pork-dumplings-picking-up-a-dumpling-with-chopsticks.jpg"
+        alt="Dumplings">
+      <p>Dumplings - $9</p>
+    </div>
+    <div class="food-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1sdodCMveuk9NwqHzCWkKKvmg_TZFkzBDw&s"
+        alt="Fried Rice">
+      <p>Fried Rice - $10</p>
+    </div>
+    <div class="food-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVPvcZIxeA9bZukK18CymY32OqFUTVbkKXgQ&s"
+        alt="Noodles">
+      <p>Noodles - $9</p>
+    </div>
+    <div class="food-item">
+      <img src="https://funcakes.com/content/uploads/2023/06/Ice-cream-recipe-960x960-c-default.jpg" alt="Ice Cream">
+      <p>Ice Cream - $6</p>
+    </div>
+    <div class="food-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmO4JADXCOtgTEI_3-L-aEiBOHEKgqfWcbw&s"
+        alt="Fruit Salad">
+      <p>Fruit Salad - $7</p>
+    </div>
+    <div class="food-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzDHd_U2ziKCQw_-QtxHcxoVjLCqE1UHLN6g&s"
+        alt="Veggie Wrap">
+      <p>Veggie Wrap - $8</p>
+    </div>
+    <div class="food-item">
+      <img src="https://www.budgetbytes.com/wp-content/uploads/2024/07/Grilled-Vegetables-Overhead.jpg"
+        alt="Grilled Vegetables">
+      <p>Grilled Vegetables - $9</p>
+    </div>
+    <div class="food-item">
+      <img src="https://www.simplyleb.com/wp-content/uploads/Falafel-38.jpg" alt="Falafel">
+      <p>Falafel - $6</p>
+    </div>
+    <div class="food-item">
+      <img src="https://static.toiimg.com/photo/53099699.cms" alt="Jalebi">
+      <p>Jalebi - $5</p>
+    </div>
+    <div class="food-item">
+      <img src="https://www.indianveggiedelight.com/wp-content/uploads/2021/08/air-fryer-paneer-tikka-featured.jpg"
+        alt="Paneer Tikka">
+      <p>Paneer Tikka - $10</p>
+    </div>
+  </section>
+  <!-- food slider  -->
+  <h2 style="text-align: center; font-weight: bold; font-size: 24px; margin-top: 20px;">Popular Dishes</h2>
+  <section class="food-slider">
+    <div class="slider-track">
+      <div class="slide">
+        <img
+          src="https://www.simplyrecipes.com/thmb/3gk1Yk1bX4eXHjv5cX2F2yZ0bXU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Spaghetti-and-Meatballs-LEAD-3-4bfbf4e1f3e44e6a8e8f7f3e8e8f7f3e.jpg"
+          alt="Spaghetti and Meatballs">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.cookingclassy.com/wp-content/uploads/2020/04/chicken-parmesan-21.jpg"
+          alt="Chicken Parmesan">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.recipetineats.com/wp-content/uploads/2020/04/Beef-Stroganoff_5-SQ.jpg"
+          alt="Beef Stroganoff">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.culinaryhill.com/wp-content/uploads/2020/05/Shrimp-Scampi-Culinary-Hill-1200x800.jpg"
+          alt="Shrimp Scampi">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.simplyrecipes.com/thmb/1gk1Yk1bX4eXHjv5cX2F2yZ0bXU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Spaghetti-and-Meatballs-LEAD-3-4bfbf4e1f3e44e6a8e8f7f3e8e8f7f3e.jpg"
+          alt="Spaghetti and Meatballs">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.cookingclassy.com/wp-content/uploads/2020/04/chicken-parmesan-21.jpg"
+          alt="Chicken Parmesan">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.recipetineats.com/wp-content/uploads/2020/04/Beef-Stroganoff_5-SQ.jpg"
+          alt="Beef Stroganoff">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.culinaryhill.com/wp-content/uploads/2020/05/Shrimp-Scampi-Culinary-Hill-1200x800.jpg"
+          alt="Shrimp Scampi">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer  -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <section>
+
+    <footer class="footer">
+      <div class="footer-column">
+        <h4>Our Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>For Customers</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping Information</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help & Support</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Order Tracking</a></li>
+          <li><a href="#">Payment Options</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Discounts</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <p>&copy; 2025 Cloud Kitchen. All rights reserved.</p>
+    </footer>
+  </section>
+
+</body>
+
+</html>

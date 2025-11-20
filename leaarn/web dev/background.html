@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Properties - Simple Demo</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+
+      .demo-box {
+        width: 300px;
+        height: 240px;
+        border: 2px solid #333;
+        margin: 12px 0;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        line-height: 200px;
+      }
+
+      .code {
+        background: #f4f4f4;
+        padding: 4px;
+        font-family: monospace;
+        color: rgb(168, 51, 51);
+      }
+
+      .bg-image {
+        /* background-image: url("https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"); */
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+      }
+
+      .bg-no-repeat {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-repeat: no-repeat;
+      }
+
+      .bg-repeat {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-repeat: repeat;
+      }
+
+      .bg-repeat-x {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-repeat: repeat-x;
+      }
+
+      .bg-repeat-y {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-repeat: repeat-y;
+      }
+
+      .bg-pos-center {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .bg-pos-top-left {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-position: top left;
+        background-repeat: no-repeat;
+      }
+
+      .bg-pos-bottom-right {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-repeat: no-repeat;
+        background-position: bottom right;
+      }
+
+      .bg-size-cover {
+        background-image: url("https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .bg-size-contain {
+        background-image: url("https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .bg-size-custom {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .bg-attachment {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .bg-gradient {
+        background: linear-gradient(75deg, red, blue);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Background Image Properties</h1>
+
+    <h2>1. background-image</h2>
+    <div class="demo-box bg-image">background-image</div>
+    <div class="code">background-image: url('image.jpg');</div>
+
+    <h2>2. background-repeat</h2>
+    <div class="demo-box bg-no-repeat">no-repeat</div>
+    <div class="code">background-repeat: no-repeat;</div>
+
+    <div class="demo-box bg-repeat">repeat</div>
+    <div class="code">background-repeat: repeat;</div>
+
+    <div class="demo-box bg-repeat-x">repeat-x</div>
+    <div class="code">background-repeat: repeat-x;</div>
+
+    <div class="demo-box bg-repeat-y">repeat-y</div>
+    <div class="code">background-repeat: repeat-y;</div>
+
+    <h2>3. background-position</h2>
+    <div class="demo-box bg-pos-center">center</div>
+    <div class="code">background-position: center;</div>
+
+    <div class="demo-box bg-pos-top-left">top left</div>
+    <div class="code">background-position: top left;</div>
+
+    <div class="demo-box bg-pos-bottom-right">bottom right</div>
+    <div class="code">background-position: bottom right;</div>
+
+    <h2>4. background-size</h2>
+    <div class="demo-box bg-size-cover">cover</div>
+    <div class="code">background-size: cover;</div>
+
+    <div class="demo-box bg-size-contain">contain</div>
+    <div class="code">background-size: contain;</div>
+
+    <div class="demo-box bg-size-custom">150px 100px</div>
+    <div class="code">background-size: 150px 100px;</div>
+
+    <h2>5. background-attachment</h2>
+    <div class="demo-box bg-attachment">fixed (scroll page)</div>
+    <div class="code">background-attachment: fixed;</div>
+
+    <h2>6. Background Shorthand</h2>
+    <div class="demo-box bg-shorthand">shorthand</div>
+    <div class="code">background: url('image.jpg') center/cover no-repeat;</div>
+
+    <h2>7. Gradient</h2>
+    <div class="demo-box bg-gradient">linear-gradient</div>
+    <div class="code">background: linear-gradient(45deg, red, blue);</div>
+  </body>
+</html>

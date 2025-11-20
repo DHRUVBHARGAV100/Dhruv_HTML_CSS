@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Place Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Place Your Order</h1>
+  </header>
+
+  <main>
+    <form onsubmit="submitOrder(event)">
+      <label>Name:</label>
+      <input type="text" required><br>
+
+      <label>Mobile Number:</label>
+      <input type="tel" required><br>
+
+      <label>Pincode:</label>
+      <input type="text" required><br>
+
+      <label>Address:</label>
+      <textarea required></textarea><br>
+
+      <button type="submit">Confirm Order</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

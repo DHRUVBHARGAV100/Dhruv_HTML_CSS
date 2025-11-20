@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positioning and Selectors</title>
+
+    <style>
+      /* ELEMENT SELECTOR */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      /* CLASS SELECTOR */
+      .container {
+        background-color: lightblue;
+        padding: 20px;
+        height: 400px;
+        position: relative;
+      }
+
+      /* ID SELECTOR */
+      #header {
+        background-color: darkblue;
+        color: white;
+        padding: 8px;
+        position: sticky;
+        top: 0;
+        /* z-index: 10; */
+      }
+
+      .box1 {
+        background-color: red;
+        color: white;
+        padding: 20px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 160px;
+      }
+
+      .box2 {
+        background-color: green;
+        color: white;
+        padding: 20px;
+        position: relative;
+        top: 20px;
+        left: 200px;
+        width: 160px;
+      }
+
+      .box3 {
+        background-color: orange;
+        color: white;
+        padding: 8px 16px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .container p {
+        background-color: darkgoldenrod;
+      }
+
+      .box1:hover {
+        background-color: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- sticky -->
+    <div id="header">
+      <h1>CSS Positions & Selectors</h1>
+    </div>
+
+    <h2>Different Positions</h2>
+
+    <div class="container">
+      <p>This is the container with relative position</p>
+
+      <div class="box1">
+        Absolute Position
+        <br />Top:50px, Left: 50px
+      </div>
+
+      <div class="box2">
+        Relative position
+        <br />Top:20px, Left: 200px
+      </div>
+    </div>
+
+    <div class="box3">FIXED position</div>
+
+    <h2>Selectors Examples</h2>
+    <p><strong>Element Selector: </strong></p>
+    <p><strong>Class Selector: </strong></p>
+    <p><strong>ID Selector: </strong></p>
+    <p><strong>Descendent Selector: </strong></p>
+    <p><strong>Pseudo-class Selector: </strong></p>
+
+    <br />
+    <br />
+    <br />
+    <p>Scroll down to see sticky header</p>
+    <br />
+    <br />
+    <br /><br />
+    <br />
+    <br /><br />
+    <br />
+    <br />
+    <p>Notice the fixed orange box stays in place</p>
+    <br />
+    <br />
+    <br /><br />
+    <br />
+    <br /><br />
+    <br />
+    <br />
+  </body>
+</html>

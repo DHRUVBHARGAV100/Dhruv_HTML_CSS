@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">YouTube</div>
+      <ul>
+        <li>🏠 Home</li>
+        <li>🎞 Shorts</li>
+        <li>📺 Subscriptions</li>
+      </ul>
+      <hr/>
+      <ul>
+        <li>🕘 History</li>
+        <li>📂 Playlists</li>
+        <li>🎥 Your Videos</li>
+        <li>⏱ Watch Later</li>
+        <li>👍 Liked Videos</li>
+      </ul>
+      <hr/>
+      <h4>Explore</h4>
+      <ul>
+        <li>🛒 Shopping</li>
+        <li>🎵 Music</li>
+        <li>🎬 Films</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <input type="text" id="searchInput" placeholder="Search" />
+        <button onclick="searchVideos()">🔍</button>
+      </header>
+
+      <!-- Category bar -->
+      <div class="category-bar">
+        <button>All</button>
+        <button>Music</button>
+        <button>Indian soap operas</button>
+        <button>Disha Vakani</button>
+        <button>Mixes</button>
+        <button>Karna</button>
+        <button>Podcasts</button>
+        <button>Masala films</button>
+        <button>Gaming</button>
+        <button>Ajay Devgn</button>
+        <button>Live</button>
+        <button>Dialogues</button>
+      </div>
+
+      <!-- Videos -->
+      <section class="video-grid" id="videoGrid">
+        <div class="video-card" data-title="Mahabharat Scene">
+          <img src="https://via.placeholder.com/300x180" alt="Video" />
+          <h3>Mahabharat Scene</h3>
+          <p>3.1M views · 5 months ago</p>
+        </div>
+        <div class="video-card" data-title="Taarak Mehta Episode">
+          <img src="https://via.placeholder.com/300x180" alt="Video" />
+          <h3>Taarak Mehta Episode</h3>
+          <p>35M views · 2 years ago</p>
+        </div>
+        <div class="video-card" data-title="Maharana Pratap">
+          <img src="https://via.placeholder.com/300x180" alt="Video" />
+          <h3>Maharana Pratap</h3>
+          <p>836K views · 1 year ago</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="scrip.js"></script>
+</body>
+</html>

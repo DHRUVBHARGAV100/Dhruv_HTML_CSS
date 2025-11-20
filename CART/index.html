@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            /* Default light-theme styles */
+            body.light-theme {
+                background-color: #fff;
+                color: #333;
+            }
+        
+            .dark-theme {
+                background-color: #333;
+                color: #fff;
+            }
+            
+            button#toggleBtn {
+              position: fixed; /* for example, place the button at bottom right corner */
+              top: 90%;
+              left: 95%;
+              padding: 10px;
+              font-size: 20px;
+            }
+        </style>
+    </head>
+    <body class="light-theme"> <!-- default theme is light -->
+        <div class="content">
+            <h1>Welcome to my website</h1>
+            <p>This is some sample text.</p>
+        </div>
+        
+        <button id="toggleBtn" onclick="toggleTheme()">Toggle Theme</button> <!-- button for theme change -->
+    </body>
+    
+    <script type="text/javascript">
+        // check if user has chosen a specific theme, otherwise default to light mode
+        var currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light-theme';
+        
+        document.body.className = currentTheme;
+
+        function toggleTheme() {
+            var body = document.body;
+            
+            // Toggle dark/light theme
+            if(body.classList.contains("dark-theme")){
+                body.classList.remove("dark-theme");
+                localStorage.setItem('theme', 'light-theme');
+            } else {
+                body.classList.add("dark-theme");
+                localStorage.setItem('theme', 'dark-theme');
+            }
+        }
+    </script>
+</html>

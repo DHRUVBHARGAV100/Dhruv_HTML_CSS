@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="settings-panel">
+  <h2>Settings</h2>
+
+  <!-- Toggles -->
+  <div class="toggle-group">
+    <div class="toggle">
+      <span>Mode</span>
+      <label class="switch">
+        <input type="checkbox" id="modeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="toggle">
+      <span>Contrast</span>
+      <label class="switch">
+        <input type="checkbox" id="contrastToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="toggle">
+      <span>Right to left</span>
+      <label class="switch">
+        <input type="checkbox" id="rtlToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="toggle">
+      <span>Compact</span>
+      <label class="switch">
+        <input type="checkbox" id="compactToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Layout Section -->
+  <div class="section">
+    <h4>Layout</h4>
+    <div class="layout-options">
+      <button class="layout active">▭</button>
+      <button class="layout">▯</button>
+      <button class="layout">▰</button>
+    </div>
+    <div class="color-options">
+      <button class="color-btn active">Integrate</button>
+      <button class="color-btn">Apparent</button>
+    </div>
+  </div>
+
+  <!-- Presets -->
+  <div class="section">
+    <h4>Presets</h4>
+    <div class="presets">
+      <div class="preset green"></div>
+      <div class="preset blue"></div>
+      <div class="preset purple"></div>
+      <div class="preset navy"></div>
+      <div class="preset yellow"></div>
+      <div class="preset red active"></div>
+    </div>
+  </div>
+
+  <!-- Fonts -->
+  <div class="section">
+    <h4>Font</h4>
+    <div class="fonts">
+      <button class="font active">Public Sans</button>
+      <button class="font">Inter</button>
+      <button class="font">DM Sans</button>
+      <button class="font">Nunito Sans</button>
+    </div>
+    <div class="font-size">
+      <label for="sizeSlider">Size: <span id="fontSizeValue">18px</span></label>
+      <input type="range" id="sizeSlider" min="12" max="30" value="18">
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

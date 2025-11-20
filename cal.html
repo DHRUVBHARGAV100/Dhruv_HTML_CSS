@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .day {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      position: relative;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .day:hover {
+      background: #f0f8ff;
+    }
+
+    .date {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .event {
+      display: none;
+      margin-top: 8px;
+      padding: 8px;
+      background: #e0f7fa;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .day.active .event {
+      display: block;
+    }
+
+    .weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      max-width: 800px;
+      margin: auto;
+      text-align: center; 
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h1>July 2025 Calendar</h1>
+
+<div class="weekdays">
+  <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+</div>
+
+<div class="calendar">
+  
+  <div class="day"><div class="date">1</div></div>
+  <div class="day"><div class="date">2</div></div>
+  <div class="day"><div class="date">3</div></div>
+  <div class="day"><div class="date">4</div><div class="event">Independence Day Celebration</div></div>
+  <div class="day"><div class="date">5</div></div>
+  <div class="day"><div class="date">6</div><div class="event">Cricket Match at 5PM</div></div>
+  <div class="day"><div class="date">7</div></div>
+  
+</div>
+
+<script>
+  // Toggle event visibility
+  document.querySelectorAll('.day').forEach(day => {
+    day.addEventListener('click', () => {
+      day.classList.toggle('active');
+    });
+  });
+</script>
+
+</body>
+</html>

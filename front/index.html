@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <h1>Crud Operations</h1>
+    </nav>
+    <form id="addUserForm">
+        <input type="text" id="usernameInput" placeholder="Username" /><br />
+        <input type="email" id="emailInput" placeholder="Email" /><br />
+        <button type="submit" id="addButton">Add User</button>
+    </form>
+    <table id="usersTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="usersBody">
+        </tbody>
+    </table>
+    <br />
+
+    <div id="usersList">
+    <button id="updateBtn">update</button>
+    <input type="text" id="emailInput" placeholder="New Email...">
+    <button id="cancelBtn">Cancel</button>
+
+
+
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

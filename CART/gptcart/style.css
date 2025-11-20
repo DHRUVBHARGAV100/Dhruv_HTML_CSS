@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2874f0;
+  color: white;
+  padding: 10px 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #ff9f00;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+.product {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Streak Card</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+    }
+
+    .streak-card {
+      background: linear-gradient(135deg, #ffe5d9, #fff1ec);
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      width: 200px;
+    }
+
+    .streak-card h2 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ff5722;
+    }
+
+    .streak-card p {
+      margin: 0.25rem 0;
+      color: #333;
+    }
+
+    .streak-card small {
+      color: #ff5722;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="streak-card">
+    <h2 id="streak-value">--</h2>
+    <p>days active</p>
+    <small id="streak-msg">Loading...</small>
+  </div>
+
+  <script>
+    // Replace this URL with your actual backend API endpoint
+    const API_URL = 'http://localhost:5000/api/streak';
+
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('streak-value').textContent = data.streak;
+        document.getElementById('streak-msg').textContent = data.message;
+      })
+      .catch(error => {
+        console.error('Error fetching streak data:', error);
+        document.getElementById('streak-msg').textContent = 'Failed to load';
+      });
+  </script>
+
+</body>
+</html>

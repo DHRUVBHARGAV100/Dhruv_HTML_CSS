@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS properties</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        background-color: white;
+        padding: 20px;
+        margin: 12px 0;
+        border: 2px solid #333;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: rgb(102, 102, 219);
+        text-align: center;
+      }
+
+      h2 {
+        color: rgb(203, 51, 51);
+      }
+
+      .list-square {
+        list-style-type: square;
+      }
+
+      .list-roman {
+        list-style-type: upper-roman;
+      }
+
+      .list-none {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .list-none li {
+        background-color: #e3f4f2;
+        padding: 8px;
+        margin-bottom: 4px;
+        border-left: 4px solid rgb(101, 101, 193);
+      }
+
+      .bg-yellow {
+        background-color: yellow;
+        padding: 12px;
+        margin: 8px 0;
+      }
+
+      .bg-gradient {
+        background: linear-gradient(rgb(188, 43, 43), rgb(43, 191, 43));
+        color: white;
+        padding: 12px;
+        margin: 8px 0;
+      }
+
+      .unit-px {
+        width: 200px;
+        background-color: rgb(234, 178, 178);
+        padding: 12px;
+        margin: 8px 0;
+      }
+
+      .unit-em {
+        width: 15em;
+        background-color: rgb(178, 234, 178);
+        padding: 12px;
+        margin: 8px 0;
+      }
+
+      .unit-percent {
+        width: 50%;
+        background-color: rgb(234, 178, 234);
+        padding: 12px;
+        margin: 8px 0;
+      }
+
+      .unit-rem {
+        font-size: 1.5rem;
+        background-color: rgb(234, 234, 178);
+        padding: 12px;
+        margin: 8px 0;
+        width: 50vw;
+      }
+
+      .box-model {
+        width: 240px;
+        background-color: #fff3cd;
+        padding: 20px;
+        border: 4px solid #ffc107;
+        margin: 20px;
+      }
+
+      .inner-content {
+        background-color: #d4edda;
+        padding: 12px;
+        border: 2px dashed #28a745;
+        text-align: center;
+      }
+
+      .block-demo {
+        display: block;
+        background-color: #ffcdd2;
+        padding: 12px;
+        margin: 8px 0;
+        width: 100%;
+      }
+
+      .inline-demo {
+        display: inline;
+        background-color: #c8e6c9;
+        padding: 4px 12px;
+        margin: 0 4px;
+      }
+
+      .inline-block-demo {
+        display: inline-block;
+        background-color: #bbdefb;
+        padding: 8px;
+        margin: 4px;
+        width: 120px;
+        text-align: center;
+      }
+
+      .opacity-demo {
+        background-color: #9c27b0;
+        color: white;
+        padding: 16px;
+        margin: 12px 0;
+      }
+
+      .opacity-50 {
+        opacity: 0.5;
+      }
+
+      .opacity-25 {
+        opacity: 0.25;
+      }
+
+      .visibility-hidden {
+        visibility: hidden;
+        background-color: #ff5722;
+        padding: 16px;
+        margin: 12px 0;
+      }
+
+      .visibility-visible {
+        visibility: visible; 
+        background-color: #4caf50;
+        color: white;
+        padding: 16px; /* BOX MODEL: padding */
+        margin: 12px 0; /* BOX MODEL: margin */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS properties</h1>
+
+    <div class="container">
+      <h2>List Properties</h2>
+      <h3>Square Bullets</h3>
+      <ul class="list-square">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ul>
+
+      <h3>Roman Numbers</h3>
+      <ol class="list-roman">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ol>
+
+      <h3>Custom Style</h3>
+      <ul class="list-none">
+        <li>Custom First</li>
+        <li>Custom Second</li>
+        <li>Custom Third</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <h2>Background Properties</h2>
+
+      <div class="bg-yellow">
+        <strong>background-color: yellow;</strong>
+      </div>
+
+      <div class="bg-gradient">
+        <strong>background: linear-gradient(#f00, #0f0);</strong>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>CSS units</h2>
+
+      <div class="unit-px">width: 200px;</div>
+      <div class="unit-em">width: 15em;</div>
+      <div class="unit-percent">width: 50%;</div>
+      <div class="unit-rem">font-size: 1.5rem</div>
+    </div>
+
+    <div class="container">
+      <h2>Box model</h2>
+
+      <div class="box-model">
+        <div class="inner-content">
+          content <br />
+          + padding <br />
+          + border <br />
+          + margin <br />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Display Properties</h2>
+
+      <h3>Block Element</h3>
+      <div class="block-demo">
+        Block 1 - Takes full width, stacks vertically
+      </div>
+      <div class="block-demo">Block 2 - Each block on new line</div>
+
+      <h3>Inline Element</h3>
+      <span class="inline-demo">Inline 1</span>
+      <span class="inline-demo">Inline 2</span>
+      <span class="inline-demo">Inline 3</span>
+
+      <p>Inline elements flow horizontally with text</p>
+
+      <h3>Inline Block Element</h3>
+      <div class="inline-block-demo">Item 1</div>
+      <div class="inline-block-demo">Item 2</div>
+      <div class="inline-block-demo">Item 3</div>
+      <p>Inline block flows horizontally but allows height/width</p>
+
+      <h3>Opacity</h3>
+      <div class="opacity-demo">opacity: 1.0</div>
+      <div class="opacity-demo opacity-50">opacity: 0.5</div>
+      <div class="opacity-demo opacity-25">opacity: 0.25</div>
+
+      <h3>Visibility</h3>
+      <div class="visibility-visible">visibility: visible</div>
+
+      <div class="visibility-hidden">visibility: hidden</div>
+
+      <div class="visibility-visible">visibility: visible</div>
+    </div>
+  </body>
+</html>

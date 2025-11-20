@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .settings {
+      max-width: 600px;
+      margin: auto;
+    }
+    
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    
+    label, button {
+      display: block;
+      margin-top: 10px;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <div class="settings">
+    <h2>Settings</h2>
+  
+    <section>
+      <h3>Mode</h3>
+      
+      <label for="mode-select">Select a mode:</label>
+      <select id="mode-select" name="mode">
+        <option value="">--Please choose an option--</option>
+        <option value="light">Light Mode</option>
+        <option value="dark">Dark Mode</option>
+      </select>
+    </section>
+  
+    <section>
+      <h3>Contrast</h3>
+      
+      <label for="contrast-slider">Change contrast (100 is default):</label>
+      <input type="range" id="contrast-slider" name="contrast" min="50" max="200" step="1" value="100">
+    </section>
+  
+    <section>
+      <h3>Layout</h3>
+      
+      <button type="reset">Reset Layout (center)</button>
+      <button type="submit">Left to Right Layout</button>
+      <button type="submit">Right to Left Layout</button>
+    </section>
+  </div>
+</body>
+
+</html>
